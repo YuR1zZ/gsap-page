@@ -40,7 +40,7 @@ const Hero = () => {
                 start : 'top top',
                 end: 'bottom top',
                 scrub: true,
-            }
+            },
         })
         .to('.right-leaf', {y:200}, 0)
         .to('.left-leaf', {y:-200}, 0)
@@ -56,14 +56,14 @@ const Hero = () => {
                 end:endValue,
                 scrub:true,
                 pin:true,   //video ro hamzaman ba scroll miare paein va ye toraei pine to kole screen
-            }
+            },
         })
 
         videoRef.current.onloadedmetadata = ()=>{
             tl.to(videoRef.current , {
                 currentTime: videoRef.current.duration
-            })
-        }
+            });
+        };
 
     },[])
 
@@ -86,7 +86,7 @@ const Hero = () => {
 
                 <div className='view-cocktails'>
                     <p className='subtitle'>Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses.</p>
-                    <a href='#coctails'>View Cocktails</a>
+                    <a href='#coctails'>View cocktails</a>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@ const Hero = () => {
 
     <div className='video absolute inset-0'>
         <video 
-        src='/videos/output.mp4'
+        src='/videos/output.mp4'   //in video ei hast ke ba ffmpeg output grftim ke har frame yek key frame dare vali hanoz ta injaye kar video bug dare (gsap video hero animation toye YT) va gofte badan mikhad fixesh kone
         muted
         playsInline
         preload='auto'
